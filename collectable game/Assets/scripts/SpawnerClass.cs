@@ -13,12 +13,24 @@ public class SpawnerClass : MonoBehaviour
         {
             spawnEnemie();
         }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            deleteEnemie();
+        }
     }
 
     void spawnEnemie()
     {
         GameObject enemy = Instantiate(enemie1);
         enemies.Add(enemy);
+
+    }
+    void deleteEnemie()
+    {
+        GameObject enemyToDelete = enemies[0];
+        enemies.RemoveAt(0);
+        Destroy(enemyToDelete);
+        Debug.Log("del");
 
     }
 }

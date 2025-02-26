@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5408413029007930467}
   - component: {fileID: 6086817043258911618}
-  - component: {fileID: 4853639606248217637}
   - component: {fileID: 569343912416017792}
+  - component: {fileID: 2259682904913110468}
   m_Layer: 0
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -86,20 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4853639606248217637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3398376297287685055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a394d7e88288041a27049bdad6b323, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 100
-  eninimesArray: []
 --- !u!50 &569343912416017792
 Rigidbody2D:
   serializedVersion: 4
@@ -127,3 +113,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2259682904913110468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3398376297287685055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389c0c094db88734ba556d31329ca8fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
+  speed: 30
+  damage: 0

@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class TowerClass : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject target;
+    private SpawnerClass ec;
+    private void Start()
     {
-        
+        ec = FindObjectOfType<SpawnerClass>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (ec.enemies != null)
+        {
+            findClosestEnemy();
+        }
+    }
+     
+    void findClosestEnemy()
+    {
+        float closestDistance = Mathf.Infinity;
+        GameObject closestEnemy= null;
+        foreach( GameObject enemy in ec.enemies )
+        {
+            float distance = Vector3.Distance(transform.position,enemy.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestEnemy = enemy;
+            }
+        }
+        target = closestEnemy;
+        Debug.Log(target);
     }
 }
