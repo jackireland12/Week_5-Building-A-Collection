@@ -17,11 +17,14 @@ public class SpawnerClass : MonoBehaviour
         {
             deleteEnemie();
         }
+        CleanEnemyList();
+        
     }
 
     void spawnEnemie()
     {
-        GameObject enemy = Instantiate(enemie1);
+        Vector3 randomspawn = new Vector3(5.0f, Random.Range(-5.0f, 5.0f), 0f);
+        GameObject enemy = Instantiate(enemie1, randomspawn,Quaternion.identity);
         enemies.Add(enemy);
 
     }
@@ -32,5 +35,16 @@ public class SpawnerClass : MonoBehaviour
         Destroy(enemyToDelete);
         Debug.Log("del");
 
+    }
+    void CleanEnemyList()
+    {
+        for (int i = enemies.Count - 1; i >= 0; i--) // Loop backwards to avoid index issues
+        {
+            if (enemies[i] == null) // Only remove if destroyed
+            {
+                enemies.RemoveAt(i);
+                Debug.Log("cleen list");
+            }
+        }
     }
 }

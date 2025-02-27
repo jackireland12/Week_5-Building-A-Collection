@@ -16,10 +16,13 @@ public class enemieClass : MonoBehaviour
         rb2.AddForce(-transform.right * speed);
     }
 
-    public virtual void Damage()
+    public virtual void Damage(int damage)
     {
         Debug.Log("attack");
-
+        HP -= damage;
+        if (HP <=        0) {
+            Destroy(gameObject);
+        }
     }
 
 }
