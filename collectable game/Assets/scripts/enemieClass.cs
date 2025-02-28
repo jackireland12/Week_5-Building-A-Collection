@@ -7,6 +7,8 @@ public class enemieClass : MonoBehaviour
     public float HP;
     public float speed;
     public float damage;
+    public ParticleSystem damageEffect;
+    public ParticleSystem deathEffect;
 
     private Rigidbody2D rb2;
 
@@ -20,9 +22,15 @@ public class enemieClass : MonoBehaviour
     {
         Debug.Log("attack");
         HP -= damage;
+        if (HP > 0)
+        {
+            damageEffect.Play();
+        }
         if (HP <=        0) {
+            deathEffect.Play();
             Destroy(gameObject);
         }
+        
     }
 
 }

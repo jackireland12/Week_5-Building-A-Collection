@@ -8,6 +8,7 @@ public class TowerClass : MonoBehaviour
     private SpawnerClass ec;
     public float attackSpeed = 1.5f;
     private Coroutine shootingCoroutine;
+    public ParticleSystem shootEffcet;
     private void Start()
     {
         ec = FindObjectOfType<SpawnerClass>();
@@ -68,6 +69,10 @@ public class TowerClass : MonoBehaviour
             {
                 enemyHealth.Damage(10); //  Damage enemy instead of instant kill
                 Debug.Log(target + "has damaged");
+                if (shootEffcet != null)
+                {
+                    shootEffcet.Play();
+                }
             }
             else
             {

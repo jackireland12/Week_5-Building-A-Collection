@@ -6,12 +6,17 @@ public class SpawnerClass : MonoBehaviour
 {
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject enemie1;
+    public List<GameObject> enemineType;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            spawnEnemie();
+            for (int i = 0; i < 3; i++) 
+            { 
+                spawnEnemie(); 
+            }
+            
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
@@ -23,8 +28,11 @@ public class SpawnerClass : MonoBehaviour
 
     void spawnEnemie()
     {
+        Debug.Log(enemineType.Count);
+        int RandomEnemie = Random.Range(0, enemineType.Count);
+        GameObject choisenEnime = enemineType[RandomEnemie];
         Vector3 randomspawn = new Vector3(5.0f, Random.Range(-5.0f, 5.0f), 0f);
-        GameObject enemy = Instantiate(enemie1, randomspawn,Quaternion.identity);
+        GameObject enemy = Instantiate(choisenEnime, randomspawn,Quaternion.identity);
         enemies.Add(enemy);
 
     }
