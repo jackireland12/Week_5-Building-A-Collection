@@ -7,6 +7,7 @@ public class SpawnerClass : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject enemie1;
     public List<GameObject> enemineType;
+    public int waveNumber = 1;
 
     private void Update()
     {
@@ -24,6 +25,10 @@ public class SpawnerClass : MonoBehaviour
         }
         CleanEnemyList();
         
+    }
+    void Waves()
+    {
+
     }
 
     void spawnEnemie()
