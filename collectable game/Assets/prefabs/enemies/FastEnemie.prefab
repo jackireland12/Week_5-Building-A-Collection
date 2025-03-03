@@ -4899,6 +4899,7 @@ GameObject:
   - component: {fileID: 5408413029007930467}
   - component: {fileID: 6086817043258911618}
   - component: {fileID: 569343912416017792}
+  - component: {fileID: 4837373055306403674}
   - component: {fileID: 2259682904913110468}
   m_Layer: 0
   m_Name: FastEnemie
@@ -5003,7 +5004,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2259682904913110468
+--- !u!114 &4837373055306403674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5011,6 +5012,26 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3398376297287685055}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e7ed930f92eee428512934d056c842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 20
+  speed: 40
+  damage: 0
+  damageEffect: {fileID: 6992355154647295771}
+  deathEffect: {fileID: 2036355039590788299}
+  normalCount: 0
+  CM: {fileID: 0}
+  fastCount: 0
+--- !u!114 &2259682904913110468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3398376297287685055}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 389c0c094db88734ba556d31329ca8fc, type: 3}
   m_Name: 
@@ -5020,6 +5041,8 @@ MonoBehaviour:
   damage: 0
   damageEffect: {fileID: 6992355154647295771}
   deathEffect: {fileID: 2036355039590788299}
+  normalCount: 0
+  CM: {fileID: 0}
 --- !u!1 &6788646253789964548
 GameObject:
   m_ObjectHideFlags: 0

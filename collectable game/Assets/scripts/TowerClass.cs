@@ -23,7 +23,7 @@ public class TowerClass : MonoBehaviour
         }
         else { 
             target = null;
-            Debug.Log("target null");
+            //Debug.Log("target null");
         }
     }
 

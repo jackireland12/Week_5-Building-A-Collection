@@ -61,7 +61,7 @@ public class SpawnerClass : MonoBehaviour
 
     void spawnEnemie()
     {
-        Debug.Log(enemineType.Count);
+        //Debug.Log(enemineType.Count);
         int RandomEnemie = Random.Range(0, enemineType.Count);
         GameObject choisenEnime = enemineType[RandomEnemie];
         Vector3 randomspawn = new Vector3(5.0f, Random.Range(-5.0f, 5.0f), 0f);
@@ -84,7 +84,7 @@ public class SpawnerClass : MonoBehaviour
             if (enemies[i] == null) // Only remove if destroyed
             {
                 enemies.RemoveAt(i);
-                Debug.Log("cleen list");
+               // Debug.Log("cleen list");
             }
         }
     }

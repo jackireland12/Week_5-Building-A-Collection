@@ -9,18 +9,21 @@ public class enemieClass : MonoBehaviour
     public float damage;
     public ParticleSystem damageEffect;
     public ParticleSystem deathEffect;
+    public int normalCount;
+    public CollectionManager CM;
 
     private Rigidbody2D rb2;
 
-    private void Start()
+    public virtual void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
+        CM = FindObjectOfType<CollectionManager>();
         rb2.AddForce(-transform.right * speed);
     }
 
     public virtual void Damage(int damage)
     {
-        Debug.Log("attack");
+        //Debug.Log("attack");
         HP -= damage;
         if (HP > 0)
         {
@@ -28,9 +31,11 @@ public class enemieClass : MonoBehaviour
         }
         if (HP <=        0) {
             deathEffect.Play();
+            CM.enemyDefeated("normal");
             Destroy(gameObject);
         }
-        
+       //int normalCount= CM.enemyCollection["normal"];
+       // Debug.Log("normal en"+normalCount);
     }
 
 }
